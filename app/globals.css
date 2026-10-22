@@ -1,0 +1,193 @@
+:root {
+  color-scheme: light;
+  --ink: #183e35;
+  --ink-muted: #596f64;
+  --gold: #b89152;
+  --surface: #fffefb;
+  --page: #fbfaf6;
+  --stroke: rgba(30, 78, 64, 0.12);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 86% 8%, rgba(195, 163, 102, 0.14), transparent 24%),
+    radial-gradient(circle at 10% 41%, rgba(47, 113, 84, 0.06), transparent 32%),
+    var(--page);
+  font-family: Tahoma, "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; }
+.page-shell { max-width: 1230px; margin: 0 auto; padding: 0 42px; }
+.site-header {
+  min-height: 105px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--stroke);
+}
+.brand, .footer-brand { display: flex; align-items: center; gap: 10px; }
+.brand img, .footer-brand img { object-fit: contain; }
+.brand-name { font-size: 1.5rem; font-weight: 700; }
+.header-status {
+  color: var(--ink-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+  padding: 10px 16px;
+  border-radius: 100px;
+  background: rgba(255,255,255,0.68);
+  border: 1px solid var(--stroke);
+}
+.hero {
+  min-height: 670px;
+  padding: 76px 0 90px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  align-items: center;
+  gap: 5%;
+}
+.eyebrow {
+  color: #9a773f;
+  font-weight: 700;
+  font-size: 0.83rem;
+  letter-spacing: 0.12em;
+  margin: 0 0 25px;
+}
+.hero h1 {
+  font-size: clamp(3.1rem, 5vw, 5.4rem);
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.035em;
+  margin: 0 0 23px;
+  max-width: 640px;
+}
+.hero h1 span { color: var(--gold); }
+.hero-description {
+  color: var(--ink-muted);
+  font-size: clamp(1rem, 1.4vw, 1.22rem);
+  line-height: 2.1;
+  max-width: 570px;
+  margin: 0 0 34px;
+}
+.principles { display: flex; flex-wrap: wrap; gap: 10px; }
+.principle {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--surface);
+  border: 1px solid var(--stroke);
+  padding: 10px 13px;
+  border-radius: 11px;
+  font-size: 0.88rem;
+}
+.principle span { color: var(--gold); font-size: 1.1rem; }
+.development-note { color: #738479; margin: 24px 0 0; font-size: 0.85rem; line-height: 1.8; }
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 450px;
+}
+.visual-halo {
+  position: absolute;
+  width: 105%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(176, 144, 84, 0.22);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 26px rgba(180, 148, 91, 0.028),
+    0 0 0 70px rgba(180, 148, 91, 0.018);
+}
+.logo-surface {
+  position: relative;
+  width: min(100%, 475px);
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle, #fffefa 52%, #f9f6ed 100%);
+  border: 1px solid rgba(191,160,106,0.21);
+  border-radius: 50%;
+  box-shadow: 0 24px 75px rgba(53,77,52,0.09), inset 0 0 44px rgba(255,255,255,0.5);
+  padding: 28px;
+}
+.hero-logo { object-fit: contain; width: 100%; height: auto; }
+.vision { padding: 48px 0 104px; border-top: 1px solid var(--stroke); }
+.section-heading { max-width: 660px; margin-bottom: 32px; }
+.section-heading .eyebrow { margin-bottom: 12px; }
+.section-heading h2 { font-size: clamp(1.9rem, 3vw, 2.8rem); line-height: 1.5; margin: 0 0 10px; }
+.section-heading > p:last-child { line-height: 1.95; color: var(--ink-muted); margin: 0; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.feature-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--stroke);
+  border-radius: 20px;
+  padding: 30px;
+  min-height: 220px;
+  box-shadow: 0 12px 38px rgba(36, 70, 52, 0.035);
+}
+.feature-number { font-size: 0.82rem; color: var(--gold); letter-spacing: 0.14em; }
+.feature-card h3 { margin: 22px 0 8px; font-size: 1.3rem; }
+.feature-card p { color: var(--ink-muted); line-height: 2; margin: 0; font-size: 0.93rem; }
+.global-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 26px;
+  padding: 40px 45px;
+  margin-bottom: 70px;
+  border-radius: 25px;
+  background: #174639;
+  color: #fffdf6;
+}
+.global-icon { color: #dfc18b; font-size: 3rem; line-height: 1; }
+.global-note h2 { font-size: 1.6rem; margin: 0 0 10px; }
+.global-note p { color: #d9e5dc; margin: 0; line-height: 2; max-width: 760px; }
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--stroke);
+  padding: 26px 0 32px;
+  color: var(--ink-muted);
+  font-size: 0.87rem;
+}
+.footer-brand { color: var(--ink); font-weight: 700; }
+.footer-domain { direction: ltr; unicode-bidi: isolate; font-weight: 600; }
+@media (max-width: 900px) {
+  .page-shell { padding: 0 25px; }
+  .hero { min-height: 0; grid-template-columns: 1fr; padding: 74px 0 65px; gap: 45px; }
+  .hero-visual { min-height: 370px; grid-row: 1; }
+  .logo-surface { width: min(84vw, 360px); }
+  .visual-halo { width: min(92vw, 405px); }
+  .hero-text { text-align: center; }
+  .hero h1, .hero-description { margin-left: auto; margin-right: auto; }
+  .principles { justify-content: center; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .feature-card { min-height: 0; }
+}
+@media (max-width: 520px) {
+  .page-shell { padding: 0 20px; }
+  .site-header { min-height: 80px; }
+  .brand-name { font-size: 1.22rem; }
+  .brand img { width: 38px; height: 38px; }
+  .header-status { font-size: 0.7rem; padding: 8px 10px; }
+  .hero { padding: 35px 0 55px; gap: 33px; }
+  .hero-visual { min-height: 270px; }
+  .logo-surface { width: min(77vw, 285px); padding: 18px; }
+  .visual-halo { width: min(85vw, 315px); }
+  .hero h1 { font-size: clamp(2.55rem, 10vw, 3.2rem); }
+  .hero-description { line-height: 1.95; }
+  .vision { padding: 39px 0 65px; }
+  .global-note { padding: 28px; gap: 13px; margin-bottom: 50px; }
+  .global-icon { font-size: 2rem; }
+  .global-note h2 { font-size: 1.35rem; }
+  .site-footer { justify-content: center; text-align: center; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
