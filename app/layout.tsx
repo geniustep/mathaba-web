@@ -16,7 +16,6 @@ export const metadata: Metadata = {
     title: "مثابة | MATHABA",
     description: "مساحة هادئة للعبادة والمعرفة. مجانًا، بلا إعلانات.",
     type: "website",
-    locale: "ar_MA",
     siteName: "مثابة | MATHABA",
     images: ["/brand/logo-primary.webp"],
   },
