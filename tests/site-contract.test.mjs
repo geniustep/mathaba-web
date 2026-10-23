@@ -101,3 +101,18 @@ test("only owner-approved public contact properties are exported", () => {
   assert.doesNotMatch(company, /street|postal|register|legalName|companyId|ICE/);
   assert.doesNotMatch(readme, /postalCode|streetAddress/);
 });
+
+test("public contact displays approved channels only, with separate website links", () => {
+  const content = text("lib/content.ts");
+  const contact = text("app/[locale]/[section]/page.tsx");
+  const css = text("app/globals.css");
+  const combined = content + contact;
+  assert.doesNotMatch(combined, /git\\s*hub|issues\\/new|publicIssue/i);
+  assert.doesNotMatch(content, /هاتف الشركة|مواقع الشركة|company websites|sites de l’entreprise/i);
+  assert.match(content, /companyWebsitesLabel:"الموقع"/);
+  assert.match(content, /companyPhoneLabel:"الهاتف"/);
+  assert.match(content, /companyContactTitle:"التواصل"/);
+  assert.match(contact, /className="company-websites"/);
+  assert.match(contact, /developer\\.websites\\.map/);
+  assert.match(css, /company-websites \\{display:flex;flex-direction:column/);
+});
