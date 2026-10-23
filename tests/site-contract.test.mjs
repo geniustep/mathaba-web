@@ -115,3 +115,29 @@ test("public contact displays approved channels only, with separate website link
   assert.ok(contact.includes("developer.websites.map"));
   assert.ok(css.includes(".company-websites {display:flex;flex-direction:column"));
 });
+
+test("reimagined primary navigation serves every locale and preserves a11y basics", () => {
+  const header = text("components/site-header.tsx");
+  const styles = text("app/globals.css");
+  for (const name of ["nav-center", "nav-more-popover", "nav-mobile-card", "nav-mobile-trigger",
+    "nav-mobile-link", "nav-contact", "nav-identity"]) {
+    assert.ok(header.includes(name), "Missing navigation element " + name);
+  }
+  for (const group of ['"features", "about", "methodology"', '"updates", "faq", "privacy"']) {
+    assert.ok(header.includes(group), "Missing navigation group");
+  }
+  for (const label of ["الرئيسية", "Accueil", "Home", "تواصل معنا", "Nous contacter", "Get in touch"]) {
+    assert.ok(header.includes(label), "Missing localized navigation label");
+  }
+  assert.match(header, /aria-expanded=/);
+  assert.match(header, /aria-current=/);
+  assert.match(header, /onKeyDown/);
+  assert.match(header, /event.key === "Escape"/);
+  assert.match(header, /event.key !== "Tab"/);
+  assert.match(header, /setMobileOpen\(false\)/);
+  assert.match(styles, /@media\(max-width:1090px\)/);
+  assert.match(styles, /@media\(max-width:480px\)/);
+  assert.match(styles, /prefers-reduced-motion:reduce/);
+  assert.match(styles, /position:sticky/);
+  assert.doesNotMatch(header, /github|issues\/new/i);
+});
