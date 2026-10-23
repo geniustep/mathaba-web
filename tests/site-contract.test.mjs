@@ -69,3 +69,20 @@ test("public Genius Step developer details remain consistent", () => {
   assert.match(schema, /siteUrl \+ "\/#developer"/);
   assert.match(schema, /developer\.phone/);
 });
+
+test("Mathaba contact email is consistently published without cross-project address", () => {
+  const company = text("lib/company.ts");
+  const content = text("lib/content.ts");
+  const contact = text("app/[locale]/[section]/page.tsx");
+  const footer = text("components/site-footer.tsx");
+  const structured = text("app/[locale]/layout.tsx");
+  assert.match(company, /contact@mathaba\.online/);
+  for (const localeCopy of ["البريد الإلكتروني", "Email address", "Courriel"]) {
+    assert.ok(content.includes(localeCopy));
+  }
+  assert.equal((content.match(/contact@mathaba\.online/g) || []).length, 3);
+  assert.doesNotMatch(content, /contact@raqeem\.ma/);
+  assert.match(contact, /mailto:\$\{developer\.email\}/);
+  assert.match(footer, /mailto:\$\{developer\.email\}/);
+  assert.match(structured, /email: developer\.email/);
+});

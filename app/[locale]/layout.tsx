@@ -24,6 +24,7 @@ export default async function LocaleLayout({
         "@type": "Organization", "@id": siteUrl + "/#developer",
         name: developer.name,
         legalName: developer.legalName,
+        email: developer.email,
         telephone: developer.phone,
         address: {
           "@type": "PostalAddress",

@@ -67,11 +67,15 @@ export default async function InformationPage({ params }: Route) {
             <h2 id="company-contact-title">{t.companyContactTitle}</h2>
             <p className="company-name">{developer.name}</p>
             <dl className="company-facts">
+              <div><dt>{t.companyEmailLabel}</dt><dd><a href={`mailto:${developer.email}`} dir="ltr">{developer.email}</a></dd></div>
               <div><dt>{t.companyPhoneLabel}</dt><dd><a href={`tel:${developer.phone}`} dir="ltr">{developer.phoneDisplay}</a></dd></div>
               <div><dt>{t.companyAddressLabel}</dt><dd><address>{developer.postalAddress.street}, {developer.postalAddress.postalCode} {developer.postalAddress.city}, {developer.postalAddress.country}</address></dd></div>
               <div><dt>{t.companyRegistryLabel}</dt><dd dir="ltr">{developer.registration}</dd></div>
             </dl>
           </section>
+        )}
+        {section === "privacy" && (
+          <div className="privacy-email"><span>{t.companyEmailLabel}: </span><a href={`mailto:${developer.email}`} dir="ltr">{developer.email}</a></div>
         )}
         {section === "contact" && (
           <div className="contact-action">

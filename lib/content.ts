@@ -13,7 +13,7 @@ export type SiteCopy = {
   transparencyTitle: string; transparencyText: string; transparencyCta: string;
   footerMission: string; footerNote: string; backHome: string;
   publicIssue: string; publicIssueNote: string;
-  developedBy: string; companyContactTitle: string; companyPhoneLabel: string; companyAddressLabel: string; companyRegistryLabel: string;
+  developedBy: string; companyContactTitle: string; companyPhoneLabel: string; companyEmailLabel: string; companyAddressLabel: string; companyRegistryLabel: string;
   pages: Record<Section, Detail>;
 };
 
@@ -43,7 +43,7 @@ export const translations: Record<Locale, SiteCopy> = {
     transparencyTitle:"الموثوقية قبل الإعلان",transparencyText:"نفرّق بين الحساب الفلكي والجداول الرسمية، وبين ما اجتاز الاختبارات التقنية وما يحتاج إلى مراجعة علمية أو ميدانية.",transparencyCta:"اقرأ منهجيتنا",
     footerMission:"مبادرة إسلامية رقمية عالمية، مجانية وخالية من الإعلانات.",
     footerNote:"الموقع تعريفي، والتطبيق لم يصدر للجمهور بعد.",backHome:"العودة إلى الرئيسية",
-    developedBy:"من تطوير شركة Genius Step SARL",companyContactTitle:"الجهة المطوّرة والتواصل",companyPhoneLabel:"هاتف الشركة",companyAddressLabel:"العنوان المهني",companyRegistryLabel:"التسجيل التجاري",
+    developedBy:"من تطوير شركة Genius Step SARL",companyContactTitle:"الجهة المطوّرة والتواصل",companyPhoneLabel:"هاتف الشركة",companyEmailLabel:"البريد الإلكتروني", companyAddressLabel:"العنوان المهني",companyRegistryLabel:"التسجيل التجاري",
     publicIssue:"الإبلاغ عن مشكلة تقنية عبر GitHub",
     publicIssueNote:"هذا الرابط يفتح بلاغًا عامًا يراه الجميع، ويستلزم حساب GitHub. لا تضع فيه بيانات شخصية أو معلومات سرية.",
     pages:{
@@ -82,7 +82,7 @@ export const translations: Record<Locale, SiteCopy> = {
       contact:{eyebrow:"التواصل",title:"التواصل والاقتراحات",lead:"مثابة من تطوير شركة Genius Step SARL المغربية. تتوفر بيانات اتصال الشركة أدناه، ويمكن الإبلاغ عن المشكلات التقنية العامة عبر GitHub.",items:[
         {title:"بلاغات تقنية عامة",body:"يمكن فتح مشكلة في المستودع العام mathaba-web على GitHub. يحتاج ذلك إلى حساب، ويكون وصف المشكلة متاحًا للعموم."},
         {title:"الخصوصية أولًا",body:"لا تُرسل أرقام الهواتف أو بيانات الحسابات أو تفاصيل شخصية أو معلومات أمنية حساسة عبر البلاغات العامة."},
-        {title:"البريد الإلكتروني",body:"لم يُفعّل بعد بريد إلكتروني مستقل خاص بمثابة. البريد contact@raqeem.ma مخصص لمشروع رقيم ولا نستخدمه للتواصل بشأن مثابة."}
+        {title:"البريد الإلكتروني",body:"يمكن التواصل بشأن مثابة على العنوان contact@mathaba.online، وهو مستقل عن بريد مشروع رقيم."}
       ]},
       updates:{eyebrow:"مستجدات",title:"رحلة التطوير",lead:"ملخصات واقعية لا تُعدّ وعودًا بمواعيد إطلاق.",items:[
         {title:"23 أكتوبر 2026 · الموقع",body:"تأسيس الموقع التعريفي الرسمي وتطوير الهوية العالمية والصفحات المعلوماتية بثلاث لغات."},
@@ -110,7 +110,7 @@ export const translations: Record<Locale, SiteCopy> = {
     globalBody:"Mathaba is designed for different countries and languages from the start, respecting local prayer calculation practices rather than imposing one universal method.",
     transparencyTitle:"Accuracy before announcements",transparencyText:"We distinguish computed from officially published prayer times, and automated test results from religious and real-device verification.",transparencyCta:"Our methodology",
     footerMission:"A worldwide Islamic initiative, free and ad-free.",footerNote:"This is an informational website. The app has not launched publicly.",backHome:"Back to home",
-    developedBy:"Developed by Genius Step SARL",companyContactTitle:"Developer and company contact",companyPhoneLabel:"Company phone",companyAddressLabel:"Business address",companyRegistryLabel:"Company registration",
+    developedBy:"Developed by Genius Step SARL",companyContactTitle:"Developer and company contact",companyPhoneLabel:"Company phone",companyEmailLabel:"Email address", companyAddressLabel:"Business address",companyRegistryLabel:"Company registration",
     publicIssue:"Report a technical issue on GitHub",publicIssueNote:"This opens a public GitHub issue and requires an account. Do not include personal or confidential information.",
     pages:{
       features:{eyebrow:"The app",title:"Features and readiness",lead:"A transparent look at the development build, not a promise of a release date or final approval.",items:[
@@ -148,7 +148,7 @@ export const translations: Record<Locale, SiteCopy> = {
       contact:{eyebrow:"Get in touch",title:"Contact and feedback",lead:"Mathaba is developed by Genius Step SARL in Morocco. The company’s published business contact details appear below, alongside a channel for public technical reports.",items:[
         {title:"Public technical reports",body:"Open an issue in the public mathaba-web GitHub repository. This requires a GitHub account and the contents are publicly visible."},
         {title:"Protect your privacy",body:"Do not share phone numbers, account details or confidential security information in public reports."},
-        {title:"Email",body:"A dedicated Mathaba email address has not yet been activated. The address contact@raqeem.ma belongs to the separate Raqeem project and is not used for Mathaba enquiries."}
+        {title:"Email",body:"For enquiries about Mathaba, use contact@mathaba.online. This address is separate from the Raqeem project."}
       ]},
       updates:{eyebrow:"Progress",title:"Development updates",lead:"Evidence-based milestones, not promises of release dates.",items:[
         {title:"23 October 2026 · Website",body:"Launched the informational foundation and expanded multilingual content and project transparency."},
@@ -176,7 +176,7 @@ export const translations: Record<Locale, SiteCopy> = {
     globalBody:"Mathaba est conçu pour différentes langues et régions dès le premier jour, dans le respect des méthodes locales de calcul de la prière.",
     transparencyTitle:"La rigueur avant les annonces",transparencyText:"Nous distinguons les horaires calculés des horaires officiels et les tests automatiques des validations religieuses et pratiques.",transparencyCta:"Notre méthodologie",
     footerMission:"Une initiative islamique mondiale, gratuite et sans publicité.",footerNote:"Ce site est informatif. L'application n'est pas encore disponible publiquement.",backHome:"Retour à l'accueil",
-    developedBy:"Développé par Genius Step SARL",companyContactTitle:"Éditeur et coordonnées",companyPhoneLabel:"Téléphone professionnel",companyAddressLabel:"Adresse professionnelle",companyRegistryLabel:"Immatriculation",
+    developedBy:"Développé par Genius Step SARL",companyContactTitle:"Éditeur et coordonnées",companyPhoneLabel:"Téléphone professionnel",companyEmailLabel:"Courriel", companyAddressLabel:"Adresse professionnelle",companyRegistryLabel:"Immatriculation",
     publicIssue:"Signaler un problème technique sur GitHub",publicIssueNote:"Le signalement est public et nécessite un compte GitHub. N'y indiquez aucune information personnelle ou confidentielle.",
     pages:{
       features:{eyebrow:"L'application",title:"Fonctionnalités et état d'avancement",lead:"Un aperçu transparent de la version en développement, sans promesse de date de sortie ni validation définitive.",items:[
@@ -214,7 +214,7 @@ export const translations: Record<Locale, SiteCopy> = {
       contact:{eyebrow:"Contact",title:"Contact et suggestions",lead:"Mathaba est développé par Genius Step SARL, au Maroc. Les coordonnées professionnelles publiques figurent ci-dessous, ainsi qu’un espace pour les signalements techniques publics.",items:[
         {title:"Signalements techniques",body:"Ouvrez une issue dans le dépôt GitHub public mathaba-web. Un compte GitHub est nécessaire et le contenu est visible de tous."},
         {title:"Respect de la vie privée",body:"N'indiquez pas de téléphone, d'identifiants ni d'informations sensibles dans un signalement public."},
-        {title:"Courriel",body:"Aucune adresse électronique dédiée à Mathaba n’a encore été activée. contact@raqeem.ma est réservé au projet distinct Raqeem et n’est pas destiné aux demandes Mathaba."}
+        {title:"Courriel",body:"Pour toute question concernant Mathaba, écrivez à contact@mathaba.online. Cette adresse est distincte de celle du projet Raqeem."}
       ]},
       updates:{eyebrow:"Actualités",title:"Actualités du développement",lead:"Des étapes documentées, sans promesse de calendrier de sortie.",items:[
         {title:"23 octobre 2026 · Site",body:"Mise en place du site informatif et de contenus multilingues décrivant le projet avec transparence."},

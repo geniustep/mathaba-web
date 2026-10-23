@@ -19,6 +19,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           <p>{t.footerMission}</p>
           <p className="quiet">{t.footerNote}</p>
           <p className="company-credit"><Link href={sitePath(locale, "contact")}>{t.developedBy}</Link> · <span dir="ltr">{developer.registration}</span></p>
+          <p className="company-email"><a href={`mailto:${developer.email}`} dir="ltr">{developer.email}</a></p>
         </div>
         <nav className="footer-links" aria-label={t.menu}>
           {footerSections.map((section) => <Link key={section} href={sitePath(locale, section)}>{t.nav[section]}</Link>)}
