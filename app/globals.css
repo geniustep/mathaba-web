@@ -16,8 +16,27 @@ body {
   margin:0;
   background:radial-gradient(circle at 90% 7%, rgba(199,166,109,.14),transparent 29%), radial-gradient(circle at 5% 52%, rgba(27,105,77,.035),transparent 27%),var(--cream);
   color:var(--text);
-  font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;
+  font-family:var(--font-mathaba-latin), "Segoe UI", Arial, sans-serif;
   -webkit-font-smoothing:antialiased;
+}
+/* Script-aware pairing avoids fallback glyphs when languages are mixed. */
+html[lang="ar"] body, [lang="ar"]:not(html) {
+  font-family:var(--font-mathaba-arabic), Tahoma, Arial, sans-serif;
+}
+html[lang="en"] body, html[lang="fr"] body,
+[lang="en"]:not(html), [lang="fr"]:not(html), [dir="ltr"] {
+  font-family:var(--font-mathaba-latin), "Segoe UI", Arial, sans-serif;
+}
+html[lang="ar"] .hero h1, html[lang="ar"] .page-intro h1 {
+  letter-spacing:0;
+  font-weight:700;
+  line-height:1.48;
+}
+html[lang="ar"] .section-header h2, html[lang="ar"] .ethics-section h2,
+html[lang="ar"] .global-panel h2, html[lang="ar"] .feature-card h3,
+html[lang="ar"] .detail-card h2 {
+  letter-spacing:0;
+  font-weight:700;
 }
 a {color:inherit}
 a:focus-visible, summary:focus-visible {outline:3px solid #b58d50;outline-offset:4px;border-radius:4px}

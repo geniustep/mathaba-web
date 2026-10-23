@@ -13,7 +13,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
         <div className="footer-identity">
           <Link href={sitePath(locale)} className="footer-logo">
             <Image src="/brand/logo-symbol.webp" alt="" width={39} height={39} />
-            <span>مثابة <span dir="ltr">· MATHABA</span></span>
+            <span>مثابة <span dir="ltr" lang="en">· MATHABA</span></span>
           </Link>
           <p>{t.footerMission}</p>
           <p className="quiet">{t.footerNote}</p>

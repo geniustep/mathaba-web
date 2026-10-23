@@ -14,7 +14,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         <Link className="brand-link" href={sitePath(locale)} aria-label={t.brand}>
           <Image src="/brand/logo-symbol.webp" width={50} height={50} alt="" priority />
           <span className="brand-word">{t.brand}</span>
-          <span className="brand-latin" dir="ltr">MATHABA</span>
+          <span className="brand-latin" lang="en" dir="ltr">MATHABA</span>
         </Link>
         <nav className="desktop-nav" aria-label={t.menu}>
           {headerSections.map((section) => <Link key={section} href={sitePath(locale, section)}>{t.nav[section]}</Link>)}

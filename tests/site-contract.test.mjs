@@ -37,3 +37,19 @@ test("no fake newsletter form or promotional analytics", () => {
   assert.doesNotMatch(routes, /<form\b/);
   assert.doesNotMatch(routes, /gtag\(|fbq\(/);
 });
+
+test("Arabic and Latin families are self-hosted and script-aware", () => {
+  const fonts = text("lib/fonts.ts");
+  assert.match(fonts, /IBM_Plex_Sans_Arabic/);
+  assert.match(fonts, /DM_Sans/);
+  assert.match(fonts, /from "next\/font\/google"/);
+  assert.match(fonts, /display: "swap"/);
+  const css = text("app/globals.css");
+  assert.match(css, /--font-mathaba-arabic/);
+  assert.match(css, /--font-mathaba-latin/);
+  for (const layout of ["app/(root)/layout.tsx", "app/[locale]/layout.tsx"]) {
+    const code = text(layout);
+    assert.match(code, /arabicFont\.variable/);
+    assert.match(code, /latinFont\.variable/);
+  }
+});

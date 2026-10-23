@@ -4,6 +4,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { locales, isLocale, siteUrl } from "@/lib/site";
 import "../globals.css";
+import { arabicFont, latinFont } from "@/lib/fonts";
 
 export const dynamicParams = false;
 export function generateStaticParams() { return locales.map((locale) => ({ locale })); }
@@ -30,7 +31,7 @@ export default async function LocaleLayout({
     ],
   };
   return (
-    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
+    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} className={`${arabicFont.variable} ${latinFont.variable}`}>
       <body>
         <a className="skip-link" href="#main"> {locale === "ar" ? "تجاوز إلى المحتوى" : locale === "fr" ? "Aller au contenu" : "Skip to content"} </a>
         <SiteHeader locale={locale} />
