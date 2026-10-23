@@ -35,7 +35,7 @@ export default async function InformationPage({ params }: Route) {
           <h1>{page.title}</h1>
           <p>{page.lead}</p>
         </div>
-        {isFAQ ? (
+        {section === "contact" ? null : isFAQ ? (
           <div className="faq-list">
             {page.items.map((item, index) => (
               <details key={item.title} className="faq-entry" open={index === 0}>
@@ -65,22 +65,23 @@ export default async function InformationPage({ params }: Route) {
         {section === "contact" && (
           <section className="company-contact" aria-labelledby="company-contact-title">
             <h2 id="company-contact-title">{t.companyContactTitle}</h2>
-            <p className="company-name">{developer.name}</p>
             <dl className="company-facts">
               <div><dt>{t.companyEmailLabel}</dt><dd><a href={`mailto:${developer.email}`} dir="ltr">{developer.email}</a></dd></div>
               <div><dt>{t.companyPhoneLabel}</dt><dd><a href={`tel:${developer.phone}`} dir="ltr">{developer.phoneDisplay}</a></dd></div>
-              <div><dt>{t.companyWebsitesLabel}</dt><dd className="company-websites">{developer.websites.map((url) => <a key={url} href={url} dir="ltr" target="_blank" rel="noopener noreferrer">{new URL(url).hostname}</a>)}</dd></div>
+              <div><dt>{t.companyWebsitesLabel}</dt><dd>
+                <div className="company-websites">
+                  {developer.websites.map((url) => (
+                    <a key={url} href={url} dir="ltr" lang="en" target="_blank" rel="noopener noreferrer">
+                      {new URL(url).hostname} <span aria-hidden="true">↗</span>
+                    </a>
+                  ))}
+                </div>
+              </dd></div>
             </dl>
           </section>
         )}
         {section === "privacy" && (
           <div className="privacy-email"><span>{t.companyEmailLabel}: </span><a href={`mailto:${developer.email}`} dir="ltr">{developer.email}</a></div>
-        )}
-        {section === "contact" && (
-          <div className="contact-action">
-            <a className="button button-primary" href="https://github.com/geniustep/mathaba-web/issues/new" target="_blank" rel="noopener noreferrer">{t.publicIssue}<span aria-hidden="true">↗</span></a>
-            <p>{t.publicIssueNote}</p>
-          </div>
         )}
         <div className="back-navigation"><Link href={sitePath(locale)}>{t.backHome} <span aria-hidden="true">↗</span></Link></div>
       </div>
