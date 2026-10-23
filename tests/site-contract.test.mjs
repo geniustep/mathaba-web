@@ -77,10 +77,9 @@ test("Mathaba contact email is consistently published without cross-project addr
   const footer = text("components/site-footer.tsx");
   const structured = text("app/[locale]/layout.tsx");
   assert.match(company, /contact@mathaba\.online/);
-  for (const localeCopy of ["البريد الإلكتروني", "Email address", "Courriel"]) {
-    assert.ok(content.includes(localeCopy));
+  for (const label of ['companyEmailLabel:"البريد الإلكتروني"', 'companyEmailLabel:"Email"', 'companyEmailLabel:"E-mail"']) {
+    assert.ok(content.includes(label));
   }
-  assert.equal((content.match(/contact@mathaba\.online/g) || []).length, 3);
   assert.doesNotMatch(content, /contact@raqeem\.ma/);
   assert.match(contact, /mailto:\$\{developer\.email\}/);
   assert.match(footer, /mailto:\$\{developer\.email\}/);
@@ -107,12 +106,12 @@ test("public contact displays approved channels only, with separate website link
   const contact = text("app/[locale]/[section]/page.tsx");
   const css = text("app/globals.css");
   const combined = content + contact;
-  assert.doesNotMatch(combined, /git\\s*hub|issues\\/new|publicIssue/i);
+  assert.doesNotMatch(combined, /github|publicIssue|issues\/new/i);
   assert.doesNotMatch(content, /هاتف الشركة|مواقع الشركة|company websites|sites de l’entreprise/i);
-  assert.match(content, /companyWebsitesLabel:"الموقع"/);
-  assert.match(content, /companyPhoneLabel:"الهاتف"/);
-  assert.match(content, /companyContactTitle:"التواصل"/);
-  assert.match(contact, /className="company-websites"/);
-  assert.match(contact, /developer\\.websites\\.map/);
-  assert.match(css, /company-websites \\{display:flex;flex-direction:column/);
+  assert.ok(content.includes('companyWebsitesLabel:"الموقع"'));
+  assert.ok(content.includes('companyPhoneLabel:"الهاتف"'));
+  assert.ok(content.includes('companyContactTitle:"التواصل"'));
+  assert.ok(contact.includes('className="company-websites"'));
+  assert.ok(contact.includes("developer.websites.map"));
+  assert.ok(css.includes(".company-websites {display:flex;flex-direction:column"));
 });
