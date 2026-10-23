@@ -1,0 +1,36 @@
+import type { ReactNode } from "react";
+import { notFound } from "next/navigation";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
+import { locales, isLocale, siteUrl } from "@/lib/site";
+import "../globals.css";
+
+export const dynamicParams = false;
+export function generateStaticParams() { return locales.map((locale) => ({ locale })); }
+
+export default async function LocaleLayout({
+  children, params,
+}: {
+  children: ReactNode; params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!isLocale(locale)) notFound();
+  const structured = {
+    "@context": "https://schema.org", "@type": "Organization",
+    name: "Mathaba | مثابة",
+    url: siteUrl,
+    logo: siteUrl + "/brand/logo-primary.webp",
+    description: "A free, ad-free Islamic companion currently in development.",
+  };
+  return (
+    <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
+      <body>
+        <a className="skip-link" href="#main"> {locale === "ar" ? "تجاوز إلى المحتوى" : locale === "fr" ? "Aller au contenu" : "Skip to content"} </a>
+        <SiteHeader locale={locale} />
+        {children}
+        <SiteFooter locale={locale} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured).replace(/</g, "\\u003c") }} />
+      </body>
+    </html>
+  );
+}

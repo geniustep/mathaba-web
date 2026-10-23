@@ -1,11 +1,10 @@
 import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/site";
 
-// Pre-launch gate: do not invite search indexing until explicit approval.
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: "*",
-      disallow: "/",
-    },
+    rules: [{ userAgent: "*", allow: "/" }],
+    sitemap: siteUrl + "/sitemap.xml",
+    host: siteUrl,
   };
 }
