@@ -23,16 +23,10 @@ export default async function LocaleLayout({
       {
         "@type": "Organization", "@id": siteUrl + "/#developer",
         name: developer.name,
-        legalName: developer.legalName,
+        url: developer.websites[0],
+        sameAs: developer.websites.slice(1),
         email: developer.email,
         telephone: developer.phone,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: developer.postalAddress.street,
-          addressLocality: developer.postalAddress.city,
-          postalCode: developer.postalAddress.postalCode,
-          addressCountry: "MA",
-        },
         description: "Independent developer of the Mathaba Islamic companion.",
       },
       {

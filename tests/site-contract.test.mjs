@@ -56,10 +56,10 @@ test("Arabic and Latin families are self-hosted and script-aware", () => {
 
 test("public Genius Step developer details remain consistent", () => {
   const company = text("lib/company.ts");
-  assert.match(company, /Genius Step SARL/);
-  assert.match(company, /66039/);
-  assert.match(company, /000210358000072/);
-  assert.match(company, /\+212620976497/);
+  assert.match(company, /Genius Step/);
+  assert.match(company, /geniustep\.com/);
+  assert.match(company, /geniustep\.ma/);
+  assert.match(company, /\+212661339892/);
   const contact = text("app/[locale]/[section]/page.tsx");
   assert.match(contact, /tel:\$\{developer\.phone\}/);
   assert.match(contact, /companyContactTitle/);
@@ -85,4 +85,17 @@ test("Mathaba contact email is consistently published without cross-project addr
   assert.match(contact, /mailto:\$\{developer\.email\}/);
   assert.match(footer, /mailto:\$\{developer\.email\}/);
   assert.match(structured, /email: developer\.email/);
+});
+
+test("private, old and unapproved contact fields are excluded from all published sources", () => {
+  const published = [
+    "lib/company.ts", "lib/content.ts", "app/[locale]/layout.tsx",
+    "app/[locale]/[section]/page.tsx", "components/site-footer.tsx", "README.md"
+  ].map(text).join("\n");
+  for (const forbidden of [
+    "66039", "000210358000072", "620976497",
+    "Rue 40", "Lot 271", "Aouama", "Genius Step SARL",
+    "developer.registration", "developer.postalAddress",
+    "contact@raqeem.ma"
+  ]) assert.ok(!published.includes(forbidden), "Unexpected restricted field in current source");
 });

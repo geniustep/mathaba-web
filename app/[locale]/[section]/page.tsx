@@ -69,8 +69,7 @@ export default async function InformationPage({ params }: Route) {
             <dl className="company-facts">
               <div><dt>{t.companyEmailLabel}</dt><dd><a href={`mailto:${developer.email}`} dir="ltr">{developer.email}</a></dd></div>
               <div><dt>{t.companyPhoneLabel}</dt><dd><a href={`tel:${developer.phone}`} dir="ltr">{developer.phoneDisplay}</a></dd></div>
-              <div><dt>{t.companyAddressLabel}</dt><dd><address>{developer.postalAddress.street}, {developer.postalAddress.postalCode} {developer.postalAddress.city}, {developer.postalAddress.country}</address></dd></div>
-              <div><dt>{t.companyRegistryLabel}</dt><dd dir="ltr">{developer.registration}</dd></div>
+              <div><dt>{t.companyWebsitesLabel}</dt><dd className="company-websites">{developer.websites.map((url) => <a key={url} href={url} dir="ltr" target="_blank" rel="noopener noreferrer">{new URL(url).hostname}</a>)}</dd></div>
             </dl>
           </section>
         )}
