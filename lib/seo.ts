@@ -18,7 +18,7 @@ export function seoMetadata(locale: Locale, section?: Section): Metadata {
     openGraph: {
       type: "website", url, siteName: "Mathaba | مثابة",
       title, description, locale: locale === "ar" ? "ar" : locale,
-      images: [{ url: "/brand/logo-primary.webp", width: 1024, height: 1024, alt: "Mathaba — مثابة" }],
+      images: [{ url: "/brand/logo-primary.webp", alt: "Mathaba — مثابة" }],
     },
     twitter: { card: "summary_large_image", title, description, images: ["/brand/logo-primary.webp"] },
     icons: { icon: "/icon.png" },

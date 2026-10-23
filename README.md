@@ -4,38 +4,38 @@
 
 ## التشغيل الحالي
 
-- مستودع الويب: \`geniustep/mathaba-web\` — مستقل عن Flutter \`geniustep/MATHABA\`.
+- مستودع الويب: `geniustep/mathaba-web` — مستقل عن Flutter `geniustep/MATHABA`.
 - الاستضافة: **Vercel / Next.js 16**.
 - DNS: Cloudflare، والتسجيل في Namecheap.
-- عنوان الإنتاج الفعلي: **https://www.mathaba.online**، مع تحويل \`mathaba.online\` إليه بواسطة Vercel (308).
-- الترجمة: \`/ar\` و\`/en\` و\`/fr\`؛ مسار \`/\` يوجّه إلى \`/ar\` دون تخمين لغة المستخدم.
+- عنوان الإنتاج الفعلي: **https://www.mathaba.online**، مع تحويل `mathaba.online` إليه بواسطة Vercel (308).
+- الترجمة: `/ar` و`/en` و`/fr`؛ مسار `/` يوجّه إلى `/ar` دون تخمين لغة المستخدم.
 - مسارات المعلومات: features / about / methodology / privacy / faq / contact / updates.
 - المزايا المعروضة متعلقة **بنسخة تجريبية**؛ لا إعلان عام عن إصدار التطبيق.
-- صفحات الفهرسة: \`/robots.txt\`، \`/sitemap.xml\`، canonical وhreflang، بيانات وصفية وصورة Open Graph.
+- صفحات الفهرسة: `/robots.txt`، `/sitemap.xml`، canonical وhreflang، بيانات وصفية وصورة Open Graph.
 
 ## الشعار
 
-الملفات \`public/brand/logo-primary.webp\` و\`public/brand/logo-symbol.webp\` و\`app/icon.png\` مأخوذة دون أي تعديل من فرع Flutter \`dev\` حسب دليل الهوية \`docs/BRAND_IDENTITY_AR.md\`. يمنع إعادة رسمها أو تعديل الحروف أو نسب الأبعاد دون اعتماد.
+الملفات `public/brand/logo-primary.webp` و`public/brand/logo-symbol.webp` و`app/icon.png` مأخوذة دون أي تعديل من فرع Flutter `dev` حسب دليل الهوية `docs/BRAND_IDENTITY_AR.md`. يمنع إعادة رسمها أو تعديل الحروف أو نسب الأبعاد دون اعتماد.
 
 ## التشغيل المحلي
 
 Node.js 22؛ نفّذ:
 
-\`\`\`sh
+```sh
 npm install
 npm run dev
 npm run build
 npm run typecheck
-\`\`\`
+```
 
 ## سياسة النشر
 
-- \`dev\` مخصص للتجربة/Preview، و\`main\` للإنتاج. الدمج إلى \`main\` بعد نجاح الفحوص ومراجعة المحتوى.
+- `dev` مخصص للتجربة/Preview، و`main` للإنتاج. الدمج إلى `main` بعد نجاح الفحوص ومراجعة المحتوى.
 - لا تستخدم روابط تنزيل غير معتمدة، ولا تنسب مواقيت محسوبة إلى جهات رسمية.
 - المصحف التطويري برواية حفص؛ **ورش غير معتمد** إلى أن تُغلق بوابات المراجعة الدينية والترخيص.
 - لا نماذج بريد مزيفة ولا ادعاءات بالتسجيل الرسمي للعلامة؛ فتح البلاغات التقنية يكون عبر GitHub العلني فقط.
 - سياسة خصوصية الموقع تميز معالجة بيانات الزيارة لدى Vercel عن سلوك تطبيق الهاتف قبل إطلاقه.
-- تأكّد من شهادة HTTPS، والتحويل \`apex→www\`، وصلاحية canonical قبل ربط Search Console.
+- تأكّد من شهادة HTTPS، والتحويل `apex→www`، وصلاحية canonical قبل ربط Search Console.
 - الوثائق القانونية والترجمات تحتاج مراجعة بشرية مختصة قبل اعتماد إصدار تطبيق المتاجر.
 - ملفات README وحالة التطبيق لا تعد ترخيصًا مفتوحًا لشيفرة Flutter.
 

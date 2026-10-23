@@ -16,11 +16,18 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
   const structured = {
-    "@context": "https://schema.org", "@type": "Organization",
-    name: "Mathaba | مثابة",
-    url: siteUrl,
-    logo: siteUrl + "/brand/logo-primary.webp",
-    description: "A free, ad-free Islamic companion currently in development.",
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization", name: "Mathaba | مثابة", url: siteUrl,
+        logo: siteUrl + "/brand/logo-primary.webp",
+        description: "A free, ad-free Islamic companion currently in development.",
+      },
+      {
+        "@type": "WebSite", name: "Mathaba | مثابة", url: siteUrl,
+        inLanguage: ["ar", "en", "fr"],
+      },
+    ],
   };
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getCopy } from "@/lib/content";
-import { locales, sitePath, type Locale, type Section } from "@/lib/site";
+import { sitePath, type Locale, type Section } from "@/lib/site";
+import { LanguageSwitcher } from "./language-switcher";
 
 const headerSections: Section[] = ["features", "about", "methodology", "updates", "faq", "contact"];
-const display: Record<Locale, string> = { ar: "العربية", en: "English", fr: "Français" };
 
 export function SiteHeader({ locale }: { locale: Locale }) {
   const t = getCopy(locale);
@@ -19,11 +19,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
         <nav className="desktop-nav" aria-label={t.menu}>
           {headerSections.map((section) => <Link key={section} href={sitePath(locale, section)}>{t.nav[section]}</Link>)}
         </nav>
-        <nav className="language-picker" aria-label="Language / اللغة">
-          {locales.map((item) => (
-            <Link href={sitePath(item)} key={item} lang={item} aria-current={item === locale ? "page" : undefined} title={display[item]}>{item.toUpperCase()}</Link>
-          ))}
-        </nav>
+        <LanguageSwitcher locale={locale} />
         <details className="mobile-nav">
           <summary>{t.menu}<span aria-hidden="true">☰</span></summary>
           <nav aria-label={t.menu}>
