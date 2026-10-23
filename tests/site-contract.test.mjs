@@ -53,3 +53,19 @@ test("Arabic and Latin families are self-hosted and script-aware", () => {
     assert.match(code, /latinFont\.variable/);
   }
 });
+
+test("public Genius Step developer details remain consistent", () => {
+  const company = text("lib/company.ts");
+  assert.match(company, /Genius Step SARL/);
+  assert.match(company, /66039/);
+  assert.match(company, /000210358000072/);
+  assert.match(company, /\+212620976497/);
+  const contact = text("app/[locale]/[section]/page.tsx");
+  assert.match(contact, /tel:\$\{developer\.phone\}/);
+  assert.match(contact, /companyContactTitle/);
+  const footer = text("components/site-footer.tsx");
+  assert.match(footer, /t\.developedBy/);
+  const schema = text("app/[locale]/layout.tsx");
+  assert.match(schema, /siteUrl \+ "\/#developer"/);
+  assert.match(schema, /developer\.phone/);
+});

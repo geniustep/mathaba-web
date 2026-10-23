@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getCopy } from "@/lib/content";
 import { sitePath, type Locale, type Section } from "@/lib/site";
+import { developer } from "@/lib/company";
 
 const footerSections: Section[] = ["about", "methodology", "privacy", "faq", "contact", "updates"];
 
@@ -17,6 +18,7 @@ export function SiteFooter({ locale }: { locale: Locale }) {
           </Link>
           <p>{t.footerMission}</p>
           <p className="quiet">{t.footerNote}</p>
+          <p className="company-credit"><Link href={sitePath(locale, "contact")}>{t.developedBy}</Link> · <span dir="ltr">{developer.registration}</span></p>
         </div>
         <nav className="footer-links" aria-label={t.menu}>
           {footerSections.map((section) => <Link key={section} href={sitePath(locale, section)}>{t.nav[section]}</Link>)}

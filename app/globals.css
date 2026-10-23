@@ -206,3 +206,15 @@ img {max-width:100%;height:auto}
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after {scroll-behavior:auto!important;transition:none!important;animation:none!important}
 }
+
+/* Clear, accessible professional contact information. */
+.company-contact { margin-top:30px;padding:32px 35px;border:1px solid var(--line);border-radius:18px;background:var(--white); }
+.company-contact h2 {font-size:1.2rem;margin:0 0 8px;}
+.company-name {font-weight:700;color:var(--green);margin:0 0 23px;}
+.company-facts {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin:0;}
+.company-facts dt {font-size:.83rem;font-weight:650;color:var(--muted);margin-bottom:8px;}
+.company-facts dd {margin:0;overflow-wrap:anywhere;line-height:1.8;}
+.company-facts a,.company-credit a {color:var(--green);text-underline-offset:3px;}
+.company-facts address {font-style:normal;}
+.company-credit {margin-top:10px;font-size:.83rem;}
+@media (max-width:750px) {.company-facts {grid-template-columns:1fr;gap:16px;}.company-contact {padding:24px;}}

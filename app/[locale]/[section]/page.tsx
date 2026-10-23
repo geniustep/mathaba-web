@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getCopy } from "@/lib/content";
+import { developer } from "@/lib/company";
 import { seoMetadata } from "@/lib/seo";
 import { isLocale, isSection, locales, sections, sitePath } from "@/lib/site";
 
@@ -60,6 +61,17 @@ export default async function InformationPage({ params }: Route) {
             <a href="https://tanzil.net/" target="_blank" rel="noopener noreferrer">Tanzil Quran Text ↗</a>
             <a href="https://pub.dev/packages/adhan_dart" target="_blank" rel="noopener noreferrer">adhan_dart ↗</a>
           </div>
+        )}
+        {section === "contact" && (
+          <section className="company-contact" aria-labelledby="company-contact-title">
+            <h2 id="company-contact-title">{t.companyContactTitle}</h2>
+            <p className="company-name">{developer.name}</p>
+            <dl className="company-facts">
+              <div><dt>{t.companyPhoneLabel}</dt><dd><a href={`tel:${developer.phone}`} dir="ltr">{developer.phoneDisplay}</a></dd></div>
+              <div><dt>{t.companyAddressLabel}</dt><dd><address>{developer.postalAddress.street}, {developer.postalAddress.postalCode} {developer.postalAddress.city}, {developer.postalAddress.country}</address></dd></div>
+              <div><dt>{t.companyRegistryLabel}</dt><dd dir="ltr">{developer.registration}</dd></div>
+            </dl>
+          </section>
         )}
         {section === "contact" && (
           <div className="contact-action">

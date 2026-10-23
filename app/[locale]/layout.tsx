@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { locales, isLocale, siteUrl } from "@/lib/site";
+import { developer } from "@/lib/company";
 import "../globals.css";
 import { arabicFont, latinFont } from "@/lib/fonts";
 
@@ -20,12 +21,22 @@ export default async function LocaleLayout({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization", name: "Mathaba | مثابة", url: siteUrl,
-        logo: siteUrl + "/brand/logo-primary.webp",
-        description: "A free, ad-free Islamic companion currently in development.",
+        "@type": "Organization", "@id": siteUrl + "/#developer",
+        name: developer.name,
+        legalName: developer.legalName,
+        telephone: developer.phone,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: developer.postalAddress.street,
+          addressLocality: developer.postalAddress.city,
+          postalCode: developer.postalAddress.postalCode,
+          addressCountry: "MA",
+        },
+        description: "Independent developer of the Mathaba Islamic companion.",
       },
       {
         "@type": "WebSite", name: "Mathaba | مثابة", url: siteUrl,
+        publisher: { "@id": siteUrl + "/#developer" },
         inLanguage: ["ar", "en", "fr"],
       },
     ],

@@ -13,6 +13,7 @@ export type SiteCopy = {
   transparencyTitle: string; transparencyText: string; transparencyCta: string;
   footerMission: string; footerNote: string; backHome: string;
   publicIssue: string; publicIssueNote: string;
+  developedBy: string; companyContactTitle: string; companyPhoneLabel: string; companyAddressLabel: string; companyRegistryLabel: string;
   pages: Record<Section, Detail>;
 };
 
@@ -42,6 +43,7 @@ export const translations: Record<Locale, SiteCopy> = {
     transparencyTitle:"الموثوقية قبل الإعلان",transparencyText:"نفرّق بين الحساب الفلكي والجداول الرسمية، وبين ما اجتاز الاختبارات التقنية وما يحتاج إلى مراجعة علمية أو ميدانية.",transparencyCta:"اقرأ منهجيتنا",
     footerMission:"مبادرة إسلامية رقمية عالمية، مجانية وخالية من الإعلانات.",
     footerNote:"الموقع تعريفي، والتطبيق لم يصدر للجمهور بعد.",backHome:"العودة إلى الرئيسية",
+    developedBy:"من تطوير شركة Genius Step SARL",companyContactTitle:"الجهة المطوّرة والتواصل",companyPhoneLabel:"هاتف الشركة",companyAddressLabel:"العنوان المهني",companyRegistryLabel:"التسجيل التجاري",
     publicIssue:"الإبلاغ عن مشكلة تقنية عبر GitHub",
     publicIssueNote:"هذا الرابط يفتح بلاغًا عامًا يراه الجميع، ويستلزم حساب GitHub. لا تضع فيه بيانات شخصية أو معلومات سرية.",
     pages:{
@@ -52,7 +54,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"لغات وخصوصية",body:"واجهة التطوير بالعربية والإنجليزية والفرنسية. يعتمد التطبيق المخصص للإصدار على تخزين محلي دون حساب إجباري، ويخضع لفحوص ما قبل النشر."}
       ],note:"لا يتوفر حتى الآن رابط تنزيل عام معتمد للتطبيق."},
       about:{eyebrow:"الرؤية",title:"ما هي مثابة؟",lead:"مثابة مشروع مستقل لبناء رفيق إسلامي هادئ ومتاح للجميع، يستهدف النفع لا جذب الانتباه أو استغلال البيانات.",items:[
-        {title:"عالمي منذ التأسيس",body:"لا تُقدَّم تجربة بلد باعتبارها المعيار الوحيد؛ تتطلب الاختلافات المحلية في المواقيت واللغة والتقويم تعاملًا مسؤولًا."},
+        {title:"عالمي منذ التأسيس",body:"مثابة من إنجاز Genius Step SARL بالمغرب، لكن المشروع عالمي منذ البداية. لا تُقدَّم تجربة بلد باعتبارها المعيار الوحيد؛ تتطلب الاختلافات المحلية في المواقيت واللغة والتقويم تعاملًا مسؤولًا."},
         {title:"هدوء دون منافسة",body:"لا نقاط للعبادة ولا سباقات بين المستخدمين؛ الفكرة هي المساندة اللطيفة للقراءة والذكر وتنظيم اليوم."},
         {title:"وعد المجانية",body:"الهدف تطبيق مجاني، بلا إعلانات ولا اشتراكات أو حسابات إلزامية. لا ندّعي أن الإصدار متاح في المتاجر قبل استكمال بوابات الإطلاق."}
       ]},
@@ -64,7 +66,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"اختبارات الإطلاق",body:"النجاح الآلي لا يغني عن التحقق الميداني من الأجهزة، ومراجعة الترخيص واللغات، والمطابقة مع الجداول الرسمية."}
       ],note:"المراجع: Tanzil Quran Text (tanzil.net) و adhan_dart. لا نعيد نشر نصوص المصادر أو الصور التي لم يُحسم ترخيصها."},
       privacy:{eyebrow:"الثقة",title:"الخصوصية",lead:"نميز هنا بين هذا الموقع التعريفي وبين تطبيق الهاتف الذي لا يزال قبل الإطلاق. آخر مراجعة تحريرية: 23 أكتوبر 2026.",items:[
-        {title:"الموقع الإلكتروني",body:"لا تتضمن شيفرة هذا الموقع إعلانات أو أدوات قياس تسويقي أو نموذج جمع بريد إلكتروني. عند زيارة الموقع، تعالج خدمات الاستضافة والتوصيل (Vercel وموفر DNS) بيانات تقنية لازمة لتقديم الصفحة، وقد تشمل عنوان IP وسجل الطلب، وفق سياساتها."},
+        {title:"الموقع الإلكتروني",body:"تدير شركة Genius Step SARL هذا الموقع التعريفي. لا تتضمن شيفرته إعلانات أو أدوات قياس تسويقي أو نموذج جمع بريد إلكتروني. عند زيارة الموقع، تعالج خدمات الاستضافة والتوصيل (Vercel وموفر DNS) بيانات تقنية لازمة لتقديم الصفحة، وقد تشمل عنوان IP وسجل الطلب، وفق سياساتها."},
         {title:"ملفات تعريف الارتباط",body:"لا ينشئ الموقع حاليًا حسابات للمستخدمين أو ملفات تعريف تسويقية، ولا يضع آلية اشتراك بريدي. قد تتغير المتطلبات إذا أضفنا خدمات مستقبلًا، وعندئذٍ سنوضحها قبل تفعيلها."},
         {title:"تطبيق الهاتف المرتقب",body:"التصميم الحالي يعتمد الإعدادات والعلامات على الجهاز، دون حساب إجباري أو تتبع إعلاني. الموقع التقريبي واختيار التنبيهات اختياريان. هذه خصائص نسخة تطويرية لا إعلان إصدار."},
         {title:"التحكم والتحديثات",body:"لا ترسل معلومات شخصية من خلال بلاغات GitHub العامة. ستُحدّث هذه الصفحة عند تفعيل أي وسيلة تواصل أو خدمة تجمع بيانات، وبعد مراجعة سياسة التطبيق قانونيًا قبل نشره."}
@@ -77,10 +79,10 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"ما اللغات المستهدفة؟",body:"العربية والإنجليزية والفرنسية ضمن تجربة الموقع والنسخة التطويرية للتطبيق، مع الحاجة إلى مراجعة لغوية قبل الإطلاق."},
         {title:"هل سيطلب التطبيق حسابًا؟",body:"لا حساب إلزاميًا ضمن التصميم الحالي، والبيانات الأساسية محلية على الجهاز."}
       ]},
-      contact:{eyebrow:"التواصل",title:"التواصل والاقتراحات",lead:"نستقبل حاليًا البلاغات التقنية العامة عبر مستودع الموقع. لم يُفعّل بعد صندوق بريد رسمي أو نموذج تواصل خاص.",items:[
+      contact:{eyebrow:"التواصل",title:"التواصل والاقتراحات",lead:"مثابة من تطوير شركة Genius Step SARL المغربية. تتوفر بيانات اتصال الشركة أدناه، ويمكن الإبلاغ عن المشكلات التقنية العامة عبر GitHub.",items:[
         {title:"بلاغات تقنية عامة",body:"يمكن فتح مشكلة في المستودع العام mathaba-web على GitHub. يحتاج ذلك إلى حساب، ويكون وصف المشكلة متاحًا للعموم."},
         {title:"الخصوصية أولًا",body:"لا تُرسل أرقام الهواتف أو بيانات الحسابات أو تفاصيل شخصية أو معلومات أمنية حساسة عبر البلاغات العامة."},
-        {title:"تواصل خاص",body:"سيُنشر عنوان اتصال رسمي هنا بعد تهيئته والتحقق من عمله. لا نعرض بريدًا افتراضيًا غير جاهز."}
+        {title:"البريد الإلكتروني",body:"لم يُفعّل بعد بريد إلكتروني مستقل خاص بمثابة. البريد contact@raqeem.ma مخصص لمشروع رقيم ولا نستخدمه للتواصل بشأن مثابة."}
       ]},
       updates:{eyebrow:"مستجدات",title:"رحلة التطوير",lead:"ملخصات واقعية لا تُعدّ وعودًا بمواعيد إطلاق.",items:[
         {title:"23 أكتوبر 2026 · الموقع",body:"تأسيس الموقع التعريفي الرسمي وتطوير الهوية العالمية والصفحات المعلوماتية بثلاث لغات."},
@@ -108,6 +110,7 @@ export const translations: Record<Locale, SiteCopy> = {
     globalBody:"Mathaba is designed for different countries and languages from the start, respecting local prayer calculation practices rather than imposing one universal method.",
     transparencyTitle:"Accuracy before announcements",transparencyText:"We distinguish computed from officially published prayer times, and automated test results from religious and real-device verification.",transparencyCta:"Our methodology",
     footerMission:"A worldwide Islamic initiative, free and ad-free.",footerNote:"This is an informational website. The app has not launched publicly.",backHome:"Back to home",
+    developedBy:"Developed by Genius Step SARL",companyContactTitle:"Developer and company contact",companyPhoneLabel:"Company phone",companyAddressLabel:"Business address",companyRegistryLabel:"Company registration",
     publicIssue:"Report a technical issue on GitHub",publicIssueNote:"This opens a public GitHub issue and requires an account. Do not include personal or confidential information.",
     pages:{
       features:{eyebrow:"The app",title:"Features and readiness",lead:"A transparent look at the development build, not a promise of a release date or final approval.",items:[
@@ -117,7 +120,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"Languages and privacy",body:"The development app includes Arabic, English and French. The intended release keeps core settings locally and does not require an account."}
       ],note:"There is no approved public app download link at this time."},
       about:{eyebrow:"Our purpose",title:"About Mathaba",lead:"An independent effort to create a calm, accessible Islamic companion that helps without monetizing attention or personal data.",items:[
-        {title:"Global from the start",body:"No single country is the default standard. Prayer methods, calendars and languages require careful local treatment."},
+        {title:"Global from the start",body:"Developed by Genius Step SARL in Morocco, Mathaba is international from day one. No single country is the default standard. Prayer methods, calendars and languages require careful local treatment."},
         {title:"A quiet companion",body:"No worship leaderboards or gamification that turns devotion into competition. A gentle aid to reflection and routine."},
         {title:"A free experience",body:"The goal is a fully free experience with no ads, subscriptions or mandatory accounts, once release checks are complete."}
       ]},
@@ -129,7 +132,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"Release evidence",body:"Automated tests do not replace testing on actual devices, reviewing licenses, translations or official prayer schedules."}
       ],note:"References include Tanzil Quran Text (tanzil.net) and adhan_dart. Unlicensed text or imagery is not republished."},
       privacy:{eyebrow:"Trust",title:"Privacy",lead:"This page distinguishes the website from the still-unreleased mobile app. Editorial review: 23 October 2026.",items:[
-        {title:"This website",body:"Its source contains no advertising or marketing analytics, accounts or email capture forms. Hosting and DNS providers, including Vercel, may process operational request information such as IP addresses to deliver the site."},
+        {title:"This website",body:"Genius Step SARL operates this informational website. Its source contains no advertising or marketing analytics, accounts or email capture forms. Hosting and DNS providers, including Vercel, may process operational request information such as IP addresses to deliver the site."},
         {title:"Cookies and subscriptions",body:"There is no marketing profiling or newsletter signup in the current website. Any future data-collecting service will require an updated notice first."},
         {title:"Mobile app in development",body:"The planned release keeps reading progress and preferences on-device, with optional approximate location and notifications. This is a description of a development build, not a published app."},
         {title:"Changes and control",body:"Please do not put private information in public GitHub issues. This notice will be revised before new data-collecting features are enabled and reviewed before the app launches."}
@@ -142,10 +145,10 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"Which languages?",body:"Arabic, English and French in the website and development build. Editorial translation review remains pending."},
         {title:"Will I need an account?",body:"An account is not required in the current design; core information is kept on-device."}
       ]},
-      contact:{eyebrow:"Get in touch",title:"Contact and feedback",lead:"We currently accept public technical reports via the website repository. A verified private contact channel is not yet available.",items:[
+      contact:{eyebrow:"Get in touch",title:"Contact and feedback",lead:"Mathaba is developed by Genius Step SARL in Morocco. The company’s published business contact details appear below, alongside a channel for public technical reports.",items:[
         {title:"Public technical reports",body:"Open an issue in the public mathaba-web GitHub repository. This requires a GitHub account and the contents are publicly visible."},
         {title:"Protect your privacy",body:"Do not share phone numbers, account details or confidential security information in public reports."},
-        {title:"Private contact",body:"A verified official contact address will be published here when the mailbox is operational."}
+        {title:"Email",body:"A dedicated Mathaba email address has not yet been activated. The address contact@raqeem.ma belongs to the separate Raqeem project and is not used for Mathaba enquiries."}
       ]},
       updates:{eyebrow:"Progress",title:"Development updates",lead:"Evidence-based milestones, not promises of release dates.",items:[
         {title:"23 October 2026 · Website",body:"Launched the informational foundation and expanded multilingual content and project transparency."},
@@ -173,6 +176,7 @@ export const translations: Record<Locale, SiteCopy> = {
     globalBody:"Mathaba est conçu pour différentes langues et régions dès le premier jour, dans le respect des méthodes locales de calcul de la prière.",
     transparencyTitle:"La rigueur avant les annonces",transparencyText:"Nous distinguons les horaires calculés des horaires officiels et les tests automatiques des validations religieuses et pratiques.",transparencyCta:"Notre méthodologie",
     footerMission:"Une initiative islamique mondiale, gratuite et sans publicité.",footerNote:"Ce site est informatif. L'application n'est pas encore disponible publiquement.",backHome:"Retour à l'accueil",
+    developedBy:"Développé par Genius Step SARL",companyContactTitle:"Éditeur et coordonnées",companyPhoneLabel:"Téléphone professionnel",companyAddressLabel:"Adresse professionnelle",companyRegistryLabel:"Immatriculation",
     publicIssue:"Signaler un problème technique sur GitHub",publicIssueNote:"Le signalement est public et nécessite un compte GitHub. N'y indiquez aucune information personnelle ou confidentielle.",
     pages:{
       features:{eyebrow:"L'application",title:"Fonctionnalités et état d'avancement",lead:"Un aperçu transparent de la version en développement, sans promesse de date de sortie ni validation définitive.",items:[
@@ -182,7 +186,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"Langues et vie privée",body:"La version de développement comprend l'arabe, l'anglais et le français. La version prévue garde les préférences en local sans compte obligatoire."}
       ],note:"Aucun lien officiel de téléchargement public n'est disponible pour le moment."},
       about:{eyebrow:"Notre mission",title:"À propos de Mathaba",lead:"Une initiative indépendante pour un compagnon islamique simple et accessible, sans monétiser l'attention ni les données personnelles.",items:[
-        {title:"Mondial dès le départ",body:"Aucun pays n'est imposé comme norme unique. Les méthodes de prière, le calendrier et les langues exigent une attention locale."},
+        {title:"Mondial dès le départ",body:"Développé par Genius Step SARL au Maroc, Mathaba a une portée internationale dès l’origine. Aucun pays n'est imposé comme norme unique. Les méthodes de prière, le calendrier et les langues exigent une attention locale."},
         {title:"Un compagnon discret",body:"Ni classement de pratique religieuse ni compétition. Une aide douce à la lecture, au rappel et au quotidien."},
         {title:"Un service gratuit",body:"L'objectif est un service gratuit, sans publicité, abonnement ou compte obligatoire, après validation des conditions de lancement."}
       ]},
@@ -194,7 +198,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"Tests de lancement",body:"Les tests automatiques ne remplacent pas les essais sur appareils réels, ni les vérifications des licences, traductions et horaires officiels."}
       ],note:"Références : Tanzil Quran Text (tanzil.net) et adhan_dart. Les images ou textes non autorisés ne sont pas reproduits."},
       privacy:{eyebrow:"Confiance",title:"Confidentialité",lead:"Cette page distingue le site informatif de l'application mobile encore non publiée. Révision éditoriale : 23 octobre 2026.",items:[
-        {title:"Ce site",body:"Le code ne contient ni publicité, ni outil d'analyse marketing, ni création de compte ou formulaire de collecte d'e-mails. L'hébergeur et les services DNS, dont Vercel, peuvent traiter les données techniques nécessaires au service, notamment l'adresse IP."},
+        {title:"Ce site",body:"Genius Step SARL exploite ce site informatif. Le code ne contient ni publicité, ni outil d'analyse marketing, ni création de compte ou formulaire de collecte d'e-mails. L'hébergeur et les services DNS, dont Vercel, peuvent traiter les données techniques nécessaires au service, notamment l'adresse IP."},
         {title:"Cookies et abonnements",body:"Le site actuel ne crée pas de profil marketing et ne comporte aucune inscription à une newsletter. Tout futur service de collecte fera l'objet d'une information préalable."},
         {title:"L'application en développement",body:"Les réglages et la progression de lecture sont prévus en local sur le téléphone, avec localisation approximative et notifications facultatives. Il ne s'agit pas d'une application déjà publiée."},
         {title:"Évolutions",body:"Ne partagez aucune donnée privée dans les issues GitHub publiques. Cette notice sera mise à jour avant tout nouveau traitement et soumise à une vérification avant la sortie de l'application."}
@@ -207,10 +211,10 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"Quelles langues ?",body:"Arabe, français et anglais pour le site et la version de développement. La relecture linguistique reste à finaliser."},
         {title:"Faut-il créer un compte ?",body:"Non dans le modèle actuel : les préférences principales sont stockées sur l'appareil."}
       ]},
-      contact:{eyebrow:"Contact",title:"Contact et suggestions",lead:"Pour le moment, les signalements techniques publics passent par le dépôt du site. Aucun canal privé vérifié n'est encore actif.",items:[
+      contact:{eyebrow:"Contact",title:"Contact et suggestions",lead:"Mathaba est développé par Genius Step SARL, au Maroc. Les coordonnées professionnelles publiques figurent ci-dessous, ainsi qu’un espace pour les signalements techniques publics.",items:[
         {title:"Signalements techniques",body:"Ouvrez une issue dans le dépôt GitHub public mathaba-web. Un compte GitHub est nécessaire et le contenu est visible de tous."},
         {title:"Respect de la vie privée",body:"N'indiquez pas de téléphone, d'identifiants ni d'informations sensibles dans un signalement public."},
-        {title:"Contact privé",body:"Une adresse officielle sera publiée ici lorsqu'elle sera opérationnelle et vérifiée."}
+        {title:"Courriel",body:"Aucune adresse électronique dédiée à Mathaba n’a encore été activée. contact@raqeem.ma est réservé au projet distinct Raqeem et n’est pas destiné aux demandes Mathaba."}
       ]},
       updates:{eyebrow:"Actualités",title:"Actualités du développement",lead:"Des étapes documentées, sans promesse de calendrier de sortie.",items:[
         {title:"23 octobre 2026 · Site",body:"Mise en place du site informatif et de contenus multilingues décrivant le projet avec transparence."},
