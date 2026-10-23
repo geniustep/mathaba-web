@@ -1,4 +1,4 @@
-/** Only owner-approved public contact details. No registration or postal data. */
+/** Owner-approved public contact details for Mathaba. */
 export const developer = {
   name: "Genius Step",
   websites: ["https://geniustep.com", "https://geniustep.ma"],
