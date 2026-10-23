@@ -54,7 +54,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"لغات وخصوصية",body:"واجهة التطوير بالعربية والإنجليزية والفرنسية. يعتمد التطبيق المخصص للإصدار على تخزين محلي دون حساب إجباري، ويخضع لفحوص ما قبل النشر."}
       ],note:"لا يتوفر حتى الآن رابط تنزيل عام معتمد للتطبيق."},
       about:{eyebrow:"الرؤية",title:"ما هي مثابة؟",lead:"مثابة مشروع مستقل لبناء رفيق إسلامي هادئ ومتاح للجميع، يستهدف النفع لا جذب الانتباه أو استغلال البيانات.",items:[
-        {title:"عالمي منذ التأسيس",body:"مثابة من إنجاز Genius Step بالمغرب، لكن المشروع عالمي منذ البداية. لا تُقدَّم تجربة بلد باعتبارها المعيار الوحيد؛ تتطلب الاختلافات المحلية في المواقيت واللغة والتقويم تعاملًا مسؤولًا."},
+        {title:"عالمي منذ التأسيس",body:"مثابة من إنجاز Genius Step، والمشروع عالمي منذ البداية. لا تُقدَّم تجربة بلد باعتبارها المعيار الوحيد؛ تتطلب الاختلافات المحلية في المواقيت واللغة والتقويم تعاملًا مسؤولًا."},
         {title:"هدوء دون منافسة",body:"لا نقاط للعبادة ولا سباقات بين المستخدمين؛ الفكرة هي المساندة اللطيفة للقراءة والذكر وتنظيم اليوم."},
         {title:"وعد المجانية",body:"الهدف تطبيق مجاني، بلا إعلانات ولا اشتراكات أو حسابات إلزامية. لا ندّعي أن الإصدار متاح في المتاجر قبل استكمال بوابات الإطلاق."}
       ]},
@@ -211,7 +211,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"Quelles langues ?",body:"Arabe, français et anglais pour le site et la version de développement. La relecture linguistique reste à finaliser."},
         {title:"Faut-il créer un compte ?",body:"Non dans le modèle actuel : les préférences principales sont stockées sur l'appareil."}
       ]},
-      contact:{eyebrow:"Contact",title:"Contact et suggestions",lead:"Mathaba est développé par Genius Step, au Maroc. Les coordonnées de contact figurent ci-dessous, ainsi qu’un espace pour les signalements techniques publics.",items:[
+      contact:{eyebrow:"Contact",title:"Contact et suggestions",lead:"Mathaba est développé par Genius Step. Les coordonnées de contact figurent ci-dessous, ainsi qu’un espace pour les signalements techniques publics.",items:[
         {title:"Signalements techniques",body:"Ouvrez une issue dans le dépôt GitHub public mathaba-web. Un compte GitHub est nécessaire et le contenu est visible de tous."},
         {title:"Respect de la vie privée",body:"N'indiquez pas de téléphone, d'identifiants ni d'informations sensibles dans un signalement public."},
         {title:"Courriel",body:"Pour toute question concernant Mathaba, écrivez à contact@mathaba.online. Cette adresse est distincte de celle du projet Raqeem."}

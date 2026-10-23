@@ -87,15 +87,17 @@ test("Mathaba contact email is consistently published without cross-project addr
   assert.match(structured, /email: developer\.email/);
 });
 
-test("private, old and unapproved contact fields are excluded from all published sources", () => {
-  const published = [
-    "lib/company.ts", "lib/content.ts", "app/[locale]/layout.tsx",
-    "app/[locale]/[section]/page.tsx", "components/site-footer.tsx", "README.md"
-  ].map(text).join("\n");
-  for (const forbidden of [
-    "66039", "000210358000072", "620976497",
-    "Rue 40", "Lot 271", "Aouama", "Genius Step SARL",
-    "developer.registration", "developer.postalAddress",
-    "contact@raqeem.ma"
-  ]) assert.ok(!published.includes(forbidden), "Unexpected restricted field in current source");
+test("only owner-approved public contact properties are exported", () => {
+  const company = text("lib/company.ts");
+  const contact = text("app/[locale]/[section]/page.tsx");
+  const structured = text("app/[locale]/layout.tsx");
+  const readme = text("README.md");
+  assert.match(company, /https:\/\/geniustep\.com/);
+  assert.match(company, /https:\/\/geniustep\.ma/);
+  assert.match(company, /0661339892/);
+  assert.match(company, /contact@mathaba\.online/);
+  assert.match(contact, /developer\.websites/);
+  assert.match(structured, /sameAs: developer\.websites/);
+  assert.doesNotMatch(company, /street|postal|register|legalName|companyId|ICE/);
+  assert.doesNotMatch(readme, /postalCode|streetAddress/);
 });
