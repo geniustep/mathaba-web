@@ -218,3 +218,9 @@ img {max-width:100%;height:auto}
 .company-facts address {font-style:normal;}
 .company-credit {margin-top:10px;font-size:.83rem;}
 @media (max-width:750px) {.company-facts {grid-template-columns:1fr;gap:16px;}.company-contact {padding:24px;}}
+
+/* Independent website links; preserve clear spacing and direction in all locales. */
+.company-websites {display:flex;flex-direction:column;align-items:flex-start;gap:12px;direction:ltr;}
+.company-websites a {display:inline-flex;align-items:center;gap:7px;width:fit-content;line-height:1.7;text-align:left;overflow-wrap:anywhere;white-space:normal;}
+.company-websites a span {font-size:.8em;color:var(--gold);}
+.company-facts dd {text-align:start;}
