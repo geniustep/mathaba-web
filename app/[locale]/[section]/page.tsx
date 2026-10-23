@@ -63,8 +63,7 @@ export default async function InformationPage({ params }: Route) {
           </div>
         )}
         {section === "contact" && (
-          <section className="company-contact" aria-labelledby="company-contact-title">
-            <h2 id="company-contact-title">{t.companyContactTitle}</h2>
+          <section className="company-contact" aria-label={t.companyContactTitle}>
             <dl className="company-facts">
               <div><dt>{t.companyEmailLabel}</dt><dd><a href={`mailto:${developer.email}`} dir="ltr">{developer.email}</a></dd></div>
               <div><dt>{t.companyPhoneLabel}</dt><dd><a href={`tel:${developer.phone}`} dir="ltr">{developer.phoneDisplay}</a></dd></div>
