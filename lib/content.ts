@@ -12,7 +12,6 @@ export type SiteCopy = {
   globalTitle: string; globalBody: string;
   transparencyTitle: string; transparencyText: string; transparencyCta: string;
   footerMission: string; footerNote: string; backHome: string;
-  publicIssue: string; publicIssueNote: string;
   developedBy: string; companyContactTitle: string; companyPhoneLabel: string; companyEmailLabel: string; companyWebsitesLabel: string;
   pages: Record<Section, Detail>;
 };
@@ -43,9 +42,7 @@ export const translations: Record<Locale, SiteCopy> = {
     transparencyTitle:"الموثوقية قبل الإعلان",transparencyText:"نفرّق بين الحساب الفلكي والجداول الرسمية، وبين ما اجتاز الاختبارات التقنية وما يحتاج إلى مراجعة علمية أو ميدانية.",transparencyCta:"اقرأ منهجيتنا",
     footerMission:"مبادرة إسلامية رقمية عالمية، مجانية وخالية من الإعلانات.",
     footerNote:"الموقع تعريفي، والتطبيق لم يصدر للجمهور بعد.",backHome:"العودة إلى الرئيسية",
-    developedBy:"من تطوير Genius Step",companyContactTitle:"الجهة المطوّرة والتواصل",companyPhoneLabel:"هاتف الشركة",companyEmailLabel:"البريد الإلكتروني", companyWebsitesLabel:"مواقع الشركة",
-    publicIssue:"الإبلاغ عن مشكلة تقنية عبر GitHub",
-    publicIssueNote:"هذا الرابط يفتح بلاغًا عامًا يراه الجميع، ويستلزم حساب GitHub. لا تضع فيه بيانات شخصية أو معلومات سرية.",
+    developedBy:"من تطوير Genius Step",companyContactTitle:"التواصل",companyPhoneLabel:"الهاتف",companyEmailLabel:"البريد الإلكتروني", companyWebsitesLabel:"الموقع",
     pages:{
       features:{eyebrow:"المنتج",title:"المزايا وحالة الجاهزية",lead:"هذا وصف صريح للنسخة التطويرية من مثابة، وليس وعدًا بموعد إطلاق أو إثباتًا لاعتماد جميع المحتويات.",items:[
         {title:"المواقيت",body:"تُحسب محليًا بطرق مختلفة. لم تُستكمل المطابقة مع الجداول الرسمية في المغرب أو البلدان الأخرى. الاختيارات المحلية لا تعني اعتمادًا رسميًا."},
@@ -69,7 +66,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"الموقع الإلكتروني",body:"تدير Genius Step هذا الموقع التعريفي. لا تتضمن شيفرته إعلانات أو أدوات قياس تسويقي أو نموذج جمع بريد إلكتروني. عند زيارة الموقع، تعالج خدمات الاستضافة والتوصيل (Vercel وموفر DNS) بيانات تقنية لازمة لتقديم الصفحة، وقد تشمل عنوان IP وسجل الطلب، وفق سياساتها."},
         {title:"ملفات تعريف الارتباط",body:"لا ينشئ الموقع حاليًا حسابات للمستخدمين أو ملفات تعريف تسويقية، ولا يضع آلية اشتراك بريدي. قد تتغير المتطلبات إذا أضفنا خدمات مستقبلًا، وعندئذٍ سنوضحها قبل تفعيلها."},
         {title:"تطبيق الهاتف المرتقب",body:"التصميم الحالي يعتمد الإعدادات والعلامات على الجهاز، دون حساب إجباري أو تتبع إعلاني. الموقع التقريبي واختيار التنبيهات اختياريان. هذه خصائص نسخة تطويرية لا إعلان إصدار."},
-        {title:"التحكم والتحديثات",body:"لا ترسل معلومات شخصية من خلال بلاغات GitHub العامة. ستُحدّث هذه الصفحة عند تفعيل أي وسيلة تواصل أو خدمة تجمع بيانات، وبعد مراجعة سياسة التطبيق قانونيًا قبل نشره."}
+        {title:"التحكم والتحديثات",body:"لا تشارك معلومات حساسة دون ضرورة. ستُحدّث هذه الصفحة عند تفعيل أي وسيلة تواصل أو خدمة تجمع بيانات، وبعد مراجعة سياسة التطبيق قانونيًا قبل نشره."}
       ],note:"هذه معلومات عن الوضع التقني الحالي وليست وعدًا بشأن سياسات موفري البنية التحتية أو مدد الاحتفاظ بسجلاتهم."},
       faq:{eyebrow:"مساعدة",title:"أسئلة شائعة",lead:"إجابات واضحة عن المشروع وحالته الفعلية.",items:[
         {title:"هل مثابة متاحة للتنزيل الآن؟",body:"ليس هناك إصدار عام معتمد بعد. نسخة Flutter تجريبية، ولا ننشر روابط متاجر أو APK على هذا الموقع حتى إغلاق بوابات الإطلاق."},
@@ -79,11 +76,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"ما اللغات المستهدفة؟",body:"العربية والإنجليزية والفرنسية ضمن تجربة الموقع والنسخة التطويرية للتطبيق، مع الحاجة إلى مراجعة لغوية قبل الإطلاق."},
         {title:"هل سيطلب التطبيق حسابًا؟",body:"لا حساب إلزاميًا ضمن التصميم الحالي، والبيانات الأساسية محلية على الجهاز."}
       ]},
-      contact:{eyebrow:"التواصل",title:"التواصل والاقتراحات",lead:"مثابة من تطوير Genius Step. تتوفر وسائل التواصل الرسمية أدناه، ويمكن الإبلاغ عن المشكلات التقنية العامة عبر GitHub.",items:[
-        {title:"بلاغات تقنية عامة",body:"يمكن فتح مشكلة في المستودع العام mathaba-web على GitHub. يحتاج ذلك إلى حساب، ويكون وصف المشكلة متاحًا للعموم."},
-        {title:"الخصوصية أولًا",body:"لا تُرسل أرقام الهواتف أو بيانات الحسابات أو تفاصيل شخصية أو معلومات أمنية حساسة عبر البلاغات العامة."},
-        {title:"البريد الإلكتروني",body:"يمكن التواصل بشأن مثابة على العنوان contact@mathaba.online، وهو مستقل عن بريد مشروع رقيم."}
-      ]},
+      contact:{eyebrow:"التواصل",title:"التواصل",lead:"للتواصل بشأن مثابة، استخدم البريد الإلكتروني أو الهاتف المهني أو زُر الموقعين الرسميين.",items:[]},
       updates:{eyebrow:"مستجدات",title:"رحلة التطوير",lead:"ملخصات واقعية لا تُعدّ وعودًا بمواعيد إطلاق.",items:[
         {title:"23 أكتوبر 2026 · الموقع",body:"تأسيس الموقع التعريفي الرسمي وتطوير الهوية العالمية والصفحات المعلوماتية بثلاث لغات."},
         {title:"23 أكتوبر 2026 · التطبيق",body:"توضح تقارير Flutter إنجاز 100 اختبار آلي وواجهة بثلاث لغات. ما زالت الاختبارات الميدانية والمواقيت الرسمية والمراجعات العلمية والتوقيع متطلبات مفتوحة."},
@@ -110,8 +103,7 @@ export const translations: Record<Locale, SiteCopy> = {
     globalBody:"Mathaba is designed for different countries and languages from the start, respecting local prayer calculation practices rather than imposing one universal method.",
     transparencyTitle:"Accuracy before announcements",transparencyText:"We distinguish computed from officially published prayer times, and automated test results from religious and real-device verification.",transparencyCta:"Our methodology",
     footerMission:"A worldwide Islamic initiative, free and ad-free.",footerNote:"This is an informational website. The app has not launched publicly.",backHome:"Back to home",
-    developedBy:"Developed by Genius Step",companyContactTitle:"Developer and company contact",companyPhoneLabel:"Company phone",companyEmailLabel:"Email address", companyWebsitesLabel:"Company websites",
-    publicIssue:"Report a technical issue on GitHub",publicIssueNote:"This opens a public GitHub issue and requires an account. Do not include personal or confidential information.",
+    developedBy:"Developed by Genius Step",companyContactTitle:"Contact",companyPhoneLabel:"Phone",companyEmailLabel:"Email", companyWebsitesLabel:"Website",
     pages:{
       features:{eyebrow:"The app",title:"Features and readiness",lead:"A transparent look at the development build, not a promise of a release date or final approval.",items:[
         {title:"Prayer calculations",body:"Calculated locally using various methods. Official comparisons in Morocco and other countries are incomplete; results must not be presented as certified official times."},
@@ -135,7 +127,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"This website",body:"Genius Step operates this informational website. Its source contains no advertising or marketing analytics, accounts or email capture forms. Hosting and DNS providers, including Vercel, may process operational request information such as IP addresses to deliver the site."},
         {title:"Cookies and subscriptions",body:"There is no marketing profiling or newsletter signup in the current website. Any future data-collecting service will require an updated notice first."},
         {title:"Mobile app in development",body:"The planned release keeps reading progress and preferences on-device, with optional approximate location and notifications. This is a description of a development build, not a published app."},
-        {title:"Changes and control",body:"Please do not put private information in public GitHub issues. This notice will be revised before new data-collecting features are enabled and reviewed before the app launches."}
+        {title:"Changes and control",body:"Avoid sending unnecessary sensitive information. This notice will be revised before new data-collecting features are enabled and reviewed before the app launches."}
       ],note:"We cannot promise hosting providers' log retention policies or present this page as a completed legal audit."},
       faq:{eyebrow:"Help",title:"Frequently asked questions",lead:"Clear answers about the current project.",items:[
         {title:"Can I download Mathaba now?",body:"No public release is approved. The Flutter app remains in testing, and no store or APK links are offered here."},
@@ -145,11 +137,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"Which languages?",body:"Arabic, English and French in the website and development build. Editorial translation review remains pending."},
         {title:"Will I need an account?",body:"An account is not required in the current design; core information is kept on-device."}
       ]},
-      contact:{eyebrow:"Get in touch",title:"Contact and feedback",lead:"Mathaba is developed by Genius Step. The official contact channels appear below, alongside a channel for public technical reports.",items:[
-        {title:"Public technical reports",body:"Open an issue in the public mathaba-web GitHub repository. This requires a GitHub account and the contents are publicly visible."},
-        {title:"Protect your privacy",body:"Do not share phone numbers, account details or confidential security information in public reports."},
-        {title:"Email",body:"For enquiries about Mathaba, use contact@mathaba.online. This address is separate from the Raqeem project."}
-      ]},
+      contact:{eyebrow:"Contact",title:"Contact",lead:"Contact Mathaba by email or business phone, or visit the two official websites.",items:[]},
       updates:{eyebrow:"Progress",title:"Development updates",lead:"Evidence-based milestones, not promises of release dates.",items:[
         {title:"23 October 2026 · Website",body:"Launched the informational foundation and expanded multilingual content and project transparency."},
         {title:"23 October 2026 · Mobile",body:"The Flutter report records 100 passing tests and a three-language interface. Device tests, official prayer-time verification, scholarly review and release signing remain open."},
@@ -176,8 +164,7 @@ export const translations: Record<Locale, SiteCopy> = {
     globalBody:"Mathaba est conçu pour différentes langues et régions dès le premier jour, dans le respect des méthodes locales de calcul de la prière.",
     transparencyTitle:"La rigueur avant les annonces",transparencyText:"Nous distinguons les horaires calculés des horaires officiels et les tests automatiques des validations religieuses et pratiques.",transparencyCta:"Notre méthodologie",
     footerMission:"Une initiative islamique mondiale, gratuite et sans publicité.",footerNote:"Ce site est informatif. L'application n'est pas encore disponible publiquement.",backHome:"Retour à l'accueil",
-    developedBy:"Développé par Genius Step",companyContactTitle:"Éditeur et coordonnées",companyPhoneLabel:"Téléphone professionnel",companyEmailLabel:"Courriel", companyWebsitesLabel:"Sites de l’entreprise",
-    publicIssue:"Signaler un problème technique sur GitHub",publicIssueNote:"Le signalement est public et nécessite un compte GitHub. N'y indiquez aucune information personnelle ou confidentielle.",
+    developedBy:"Développé par Genius Step",companyContactTitle:"Contact",companyPhoneLabel:"Téléphone",companyEmailLabel:"E-mail", companyWebsitesLabel:"Site web",
     pages:{
       features:{eyebrow:"L'application",title:"Fonctionnalités et état d'avancement",lead:"Un aperçu transparent de la version en développement, sans promesse de date de sortie ni validation définitive.",items:[
         {title:"Horaires",body:"Calcul local selon plusieurs méthodes. Les comparaisons avec les calendriers officiels au Maroc et ailleurs ne sont pas terminées ; ces horaires ne sont pas certifiés."},
@@ -201,7 +188,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"Ce site",body:"Genius Step exploite ce site informatif. Le code ne contient ni publicité, ni outil d'analyse marketing, ni création de compte ou formulaire de collecte d'e-mails. L'hébergeur et les services DNS, dont Vercel, peuvent traiter les données techniques nécessaires au service, notamment l'adresse IP."},
         {title:"Cookies et abonnements",body:"Le site actuel ne crée pas de profil marketing et ne comporte aucune inscription à une newsletter. Tout futur service de collecte fera l'objet d'une information préalable."},
         {title:"L'application en développement",body:"Les réglages et la progression de lecture sont prévus en local sur le téléphone, avec localisation approximative et notifications facultatives. Il ne s'agit pas d'une application déjà publiée."},
-        {title:"Évolutions",body:"Ne partagez aucune donnée privée dans les issues GitHub publiques. Cette notice sera mise à jour avant tout nouveau traitement et soumise à une vérification avant la sortie de l'application."}
+        {title:"Évolutions",body:"Évitez d’envoyer des informations sensibles sans nécessité. Cette notice sera mise à jour avant tout nouveau traitement et soumise à une vérification avant la sortie de l'application."}
       ],note:"Cette présentation technique ne garantit pas les durées de conservation des journaux des prestataires et ne remplace pas une validation juridique."},
       faq:{eyebrow:"Aide",title:"Questions fréquentes",lead:"Des réponses sur l'état réel du projet.",items:[
         {title:"Puis-je télécharger Mathaba ?",body:"Aucune version publique n'est encore approuvée. Flutter est en phase de test ; le site ne propose ni APK ni lien vers les boutiques."},
@@ -211,11 +198,7 @@ export const translations: Record<Locale, SiteCopy> = {
         {title:"Quelles langues ?",body:"Arabe, français et anglais pour le site et la version de développement. La relecture linguistique reste à finaliser."},
         {title:"Faut-il créer un compte ?",body:"Non dans le modèle actuel : les préférences principales sont stockées sur l'appareil."}
       ]},
-      contact:{eyebrow:"Contact",title:"Contact et suggestions",lead:"Mathaba est développé par Genius Step. Les coordonnées de contact figurent ci-dessous, ainsi qu’un espace pour les signalements techniques publics.",items:[
-        {title:"Signalements techniques",body:"Ouvrez une issue dans le dépôt GitHub public mathaba-web. Un compte GitHub est nécessaire et le contenu est visible de tous."},
-        {title:"Respect de la vie privée",body:"N'indiquez pas de téléphone, d'identifiants ni d'informations sensibles dans un signalement public."},
-        {title:"Courriel",body:"Pour toute question concernant Mathaba, écrivez à contact@mathaba.online. Cette adresse est distincte de celle du projet Raqeem."}
-      ]},
+      contact:{eyebrow:"Contact",title:"Contact",lead:"Pour contacter Mathaba, utilisez l’e-mail ou le téléphone professionnel, ou consultez les deux sites officiels.",items:[]},
       updates:{eyebrow:"Actualités",title:"Actualités du développement",lead:"Des étapes documentées, sans promesse de calendrier de sortie.",items:[
         {title:"23 octobre 2026 · Site",body:"Mise en place du site informatif et de contenus multilingues décrivant le projet avec transparence."},
         {title:"23 octobre 2026 · Mobile",body:"Le rapport Flutter fait état de 100 tests réussis et d'une interface trilingue. Les tests réels, les horaires officiels, les révisions scientifiques et la signature restent à finaliser."},
